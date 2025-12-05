@@ -1,4 +1,4 @@
-# analytics_app/monitoring/views.py
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.db.models import Count, Avg, Sum, F

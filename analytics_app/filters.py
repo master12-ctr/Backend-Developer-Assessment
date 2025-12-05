@@ -1,4 +1,4 @@
-# analytics_app/filters.py
+
 import django_filters
 from django_filters import rest_framework as filters
 from django.db.models import Q

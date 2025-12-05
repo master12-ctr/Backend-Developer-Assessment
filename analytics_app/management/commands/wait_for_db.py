@@ -1,4 +1,4 @@
-# analytics_app/management/commands/wait_for_db.py
+
 import time
 from django.db import connections
 from django.db.utils import OperationalError

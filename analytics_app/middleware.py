@@ -1,4 +1,4 @@
-# analytics_app/middleware.py
+
 import time
 import uuid
 import json

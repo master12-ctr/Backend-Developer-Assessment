@@ -1,4 +1,4 @@
-# analytics_app/monitoring/middleware.py
+
 import time
 import json
 from django.utils.deprecation import MiddlewareMixin

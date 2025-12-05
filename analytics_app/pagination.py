@@ -1,4 +1,4 @@
-# analytics_app/pagination.py
+
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.response import Response
 from collections import OrderedDict
@@ -31,7 +31,7 @@ class AnalyticsPagination(LimitOffsetPagination):
             ('range', date_range),
             ('data', data_list)
         ]))
-        
+
 class AnalyticsPagination(LimitOffsetPagination):
     """
     Custom pagination for analytics APIs with metadata

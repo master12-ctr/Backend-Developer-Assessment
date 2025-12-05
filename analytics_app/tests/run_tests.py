@@ -1,4 +1,4 @@
-# analytics_app/tests/run_tests.py
+
 import subprocess
 import sys
 import os

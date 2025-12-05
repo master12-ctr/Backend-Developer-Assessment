@@ -1,4 +1,4 @@
-# analytics_app/query_optimizer.py
+
 from django.db import connection
 from django.db.models import QuerySet
 import logging

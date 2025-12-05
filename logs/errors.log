@@ -1,8 +1,0 @@
-{"levelname": "ERROR", "asctime": "2025-12-05 10:23:38,033", "module": "exceptions", "process": 18204, "thread": 7892, "message": "AnalyticsAPIException: Invalid object_type: invalid. Must be 'country' or 'user'"}
-{"levelname": "ERROR", "asctime": "2025-12-05 10:23:43,945", "module": "exceptions", "process": 21604, "thread": 16448, "message": "AnalyticsAPIException: Invalid object_type: invalid. Must be 'country' or 'user'"}
-{"levelname": "ERROR", "asctime": "2025-12-05 10:23:43,959", "module": "exceptions", "process": 21604, "thread": 16448, "message": "AnalyticsAPIException: Invalid top_type: invalid. Must be 'user', 'country', or 'blog'"}
-{"levelname": "ERROR", "asctime": "2025-12-05 10:23:43,969", "module": "exceptions", "process": 21604, "thread": 16448, "message": "AnalyticsAPIException: Invalid compare_type: invalid. Must be 'day', 'week', 'month', or 'year'"}
-{"levelname": "ERROR", "asctime": "2025-12-05 10:23:48,081", "module": "exceptions", "process": 17132, "thread": 16160, "message": "AnalyticsAPIException: Invalid object_type: invalid. Must be 'country' or 'user'"}
-{"levelname": "ERROR", "asctime": "2025-12-05 10:23:48,089", "module": "exceptions", "process": 17132, "thread": 16160, "message": "AnalyticsAPIException: Invalid top_type: invalid. Must be 'user', 'country', or 'blog'"}
-{"levelname": "ERROR", "asctime": "2025-12-05 10:23:48,092", "module": "exceptions", "process": 17132, "thread": 16160, "message": "AnalyticsAPIException: Invalid compare_type: invalid. Must be 'day', 'week', 'month', or 'year'"}
-{"levelname": "ERROR", "asctime": "2025-12-05 10:23:55,738", "module": "exceptions", "process": 17132, "thread": 16160, "message": "AnalyticsAPIException: Invalid object_type: invalid. Must be 'country' or 'user'"}

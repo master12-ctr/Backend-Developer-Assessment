@@ -1,4 +1,4 @@
-# analytics_app/services.py
+
 from django.db.models import Count, Sum, F, Window, Q, Value, CharField
 from django.db.models.functions import Trunc, Coalesce, Lag, Extract
 from django.db.models.functions import Concat

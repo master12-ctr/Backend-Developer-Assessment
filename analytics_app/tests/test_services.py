@@ -1,4 +1,4 @@
-# analytics_app/tests/test_services.py
+
 from django.test import TestCase
 from django.contrib.auth.models import User
 from analytics_app.models import Country, Blog, BlogView

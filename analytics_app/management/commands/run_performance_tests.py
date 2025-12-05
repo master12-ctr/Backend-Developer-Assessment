@@ -1,4 +1,4 @@
-# analytics_app/management/commands/run_performance_tests.py
+
 import time
 import statistics
 from django.core.management.base import BaseCommand
