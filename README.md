@@ -107,15 +107,13 @@ pip install -r requirements.txt
 # Configure Database
 
 
+python manage.py makemigrations analytics_app
+
 python manage.py migrate
 
 python manage.py createsuperuser  
 
 # Load Sample Data
-
-python manage.py makemigrations analytics_app
-
-python manage.py migrate
 
 python manage.py load_sample_data
 
