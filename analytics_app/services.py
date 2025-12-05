@@ -1,4 +1,3 @@
-
 from django.db.models import Count, Sum, F, Window, Q, Value, CharField
 from django.db.models.functions import Trunc, Coalesce, Lag, Extract
 from django.db.models.functions import Concat
@@ -6,6 +5,7 @@ from datetime import datetime, timedelta
 from django.utils import timezone
 import json
 import logging
+import urllib.parse
 
 from .models import BlogView, Blog, User
 from .exceptions import (
@@ -289,21 +289,43 @@ class AnalyticsService:
             if not filters:
                 return queryset
             
-            filters_data = json.loads(filters)
+            logger.info(f"Raw filters string: {filters}")
+            
+            # Try to decode URL-encoded JSON
+            try:
+                # Check if it's URL-encoded
+                if '%' in filters or '=' in filters:
+                    decoded = urllib.parse.unquote(filters)
+                    logger.info(f"Decoded filters: {decoded}")
+                    filters_data = json.loads(decoded)
+                else:
+                    filters_data = json.loads(filters)
+            except json.JSONDecodeError as e:
+                logger.warning(f"Invalid JSON in filters: {filters}, error: {str(e)}")
+                raise InvalidFilterException(f"Invalid JSON format in filters: {str(e)}")
+            
             q_objects = Q()
             
             operator = filters_data.get('operator', 'and')
             conditions = filters_data.get('conditions', [])
+            
+            logger.info(f"Parsed filter - Operator: {operator}, Conditions: {conditions}")
             
             for condition in conditions:
                 field = condition.get('field')
                 op = condition.get('operator')
                 value = condition.get('value')
                 
+                logger.info(f"Processing condition - Field: {field}, Operator: {op}, Value: {value}")
+                
                 if not all([field, op, value]):
+                    logger.warning(f"Incomplete condition: {condition}")
                     continue
                 
                 lookup = AnalyticsService._get_lookup(field, op)
+                logger.info(f"Lookup expression: {lookup}")
+                
+                # Create Q object
                 q_obj = Q(**{lookup: value})
                 
                 if operator == 'and':
@@ -313,7 +335,9 @@ class AnalyticsService:
                 elif operator == 'not':
                     q_objects &= ~q_obj
             
+            logger.info(f"Final Q objects: {q_objects}")
             return queryset.filter(q_objects)
+            
         except json.JSONDecodeError as e:
             logger.warning(f"Invalid JSON in filters: {filters}")
             raise InvalidFilterException(f"Invalid JSON format in filters: {str(e)}")
@@ -321,7 +345,7 @@ class AnalyticsService:
             logger.warning(f"Missing key in filters: {filters}")
             raise InvalidFilterException(f"Missing key in filters: {str(e)}")
         except Exception as e:
-            logger.error(f"Error applying filters: {str(e)}")
+            logger.error(f"Error applying filters: {str(e)}", exc_info=True)
             raise InvalidFilterException(f"Error applying filters: {str(e)}")
     
     @staticmethod
@@ -333,7 +357,10 @@ class AnalyticsService:
             'lt': 'lt',
             'lte': 'lte',
             'contains': 'icontains',
+            'icontains': 'icontains',
             'in': 'in',
+            'startswith': 'istartswith', 
+            'endswith': 'iendswith',
         }
         lookup_expr = lookup_map.get(operator, 'exact')
         return f"{field}__{lookup_expr}"

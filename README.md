@@ -3,26 +3,38 @@
 
 A production-ready Django analytics system with three comprehensive REST APIs for blog view analytics. This solution demonstrates senior-level backend development skills with complete implementation of all assessment requirements plus advanced enterprise features.
 
-✨ Key Features
+# ✨ Key Features
 
 ✅ 3 Complete Analytics APIs – Blog views, top performers, time-series performance
+
 ✅ Dynamic Filtering System – Advanced JSON-based multi-table filtering
+
 ✅ Performance Optimized – All APIs < 25ms response time with 10k+ records
+
 ✅ Complete Test Suite – 17 passing tests with performance benchmarks
+
 ✅ Enterprise Ready – Error handling, logging, monitoring, documentation
+
+# ⚡ Advanced Features
+
 ✅ Swagger API Docs – Interactive OpenAPI documentation
 
-⚡ Advanced Features
-
 ✅ Comprehensive Monitoring – Request logging, performance metrics, error tracking
+
 ✅ Advanced Error Handling – Custom exceptions with proper HTTP status codes
+
 ✅ Database Indexing – Strategic indexes for optimal query performance
+
 ✅ Production Middleware – Request/response logging, CORS, security headers
+
 ✅ Query Optimizer – Query analysis and performance debugging tools
+
 ✅ Health Check Endpoints – System monitoring and performance dashboards
+
 ✅ Sample Data Script – Realistic test data generation
 
-✅ All Assessment Requirements Met
+#  All Assessment Requirements Met
+
 API #1 — /analytics/blog-views/
 
 ✅ object_type = country/user - Group blogs and views by selected object_type
@@ -75,7 +87,7 @@ General Requirements
 
 ✅ Consistent x, y, z output structure - All APIs follow the same pattern
 
-🔧 Tech Stack
+# 🔧 Tech Stack
 
 Backend: Django 6.0 + Django REST Framework
 
