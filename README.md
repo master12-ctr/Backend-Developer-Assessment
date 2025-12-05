@@ -91,12 +91,12 @@ Deployment: Docker-ready with production settings
 
 # 🚀 Quick Start
 Step 1: Clone and Setup
+
 git clone https://github.com/master12-ctr/Backend-Developer-Assessment.git
+
 cd Backend-Developer-Assessment
 
 # Create and activate virtual environment
-
-
 python -m venv env
 
 env\Scripts\activate  
@@ -119,7 +119,7 @@ python manage.py load_sample_data
 
 python manage.py runserver
 
-Access URLs
+# Access URLs
 
 API Documentation: http://localhost:8000/swagger/
 
@@ -127,7 +127,7 @@ ReDoc Documentation: http://localhost:8000/redoc/
 
 Admin Panel: http://localhost:8000/admin/
 
-🧪 Running Tests
+# 🧪 Running Tests
 # Complete Test Suite
 
 
@@ -135,44 +135,68 @@ python analytics_app/tests/run_tests.py
 
 # Individual Test Modules
 python manage.py test analytics_app.tests.test_models
+
 python manage.py test analytics_app.tests.test_services
+
 python manage.py test analytics_app.tests.test_views
+
 python manage.py test analytics_app.tests.test_integration
+
 python manage.py test analytics_app  # All tests
 
 # Performance Tests
 
 python manage.py run_performance_tests
 
-📊 API Usage Examples
-API 1: Blog Views Analytics
-# Get blog views by country for current month
+# 📊 API Usage Examples
+# API 1: Blog Views Analytics
+
+
+  Get blog views by country for current month
+
+
 curl "http://localhost:8000/analytics/blog-views/?object_type=country&range=month"
 
-# Get blog views by user for all time
+ Get blog views by user for all time
+
+
 curl "http://localhost:8000/analytics/blog-views/?object_type=user&range=all"
 
-# With pagination
+ With pagination
+
+
 curl "http://localhost:8000/analytics/blog-views/?object_type=country&range=month&limit=10&offset=0"
 
-API 2: Top Analytics
-# Top 10 users by views
+# API 2: Top Analytics
+ Top 10 users by views
+
+
 curl "http://localhost:8000/analytics/top/?top=user"
 
-# Top 10 countries by views
+ Top 10 countries by views
+
+
 curl "http://localhost:8000/analytics/top/?top=country"
 
-# Top 10 blogs by views
+ Top 10 blogs by views
+
+
 curl "http://localhost:8000/analytics/top/?top=blog"
 
 API 3: Performance Analytics
-# Monthly performance comparison
+ Monthly performance comparison
+
+
 curl "http://localhost:8000/analytics/performance/?compare=month"
 
-# Weekly performance comparison
+ Weekly performance comparison
+
+
 curl "http://localhost:8000/analytics/performance/?compare=week"
 
-# User-specific performance
+ User-specific performance
+
+
 curl "http://localhost:8000/analytics/performance/?compare=month&user_id=1"
 
 Advanced Filtering Example
