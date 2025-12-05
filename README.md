@@ -113,6 +113,10 @@ python manage.py createsuperuser
 
 # Load Sample Data
 
+python manage.py makemigrations analytics_app
+
+python manage.py migrate
+
 python manage.py load_sample_data
 
 # Run Development Server
@@ -157,10 +161,6 @@ python manage.py run_performance_tests
 
 curl "http://localhost:8000/analytics/blog-views/?object_type=country&range=month"
 
- Get blog views by user for all time
-
-
-curl "http://localhost:8000/analytics/blog-views/?object_type=user&range=all"
 
  With pagination
 
@@ -197,7 +197,6 @@ curl "http://localhost:8000/analytics/performance/?compare=week"
  User-specific performance
 
 
-curl "http://localhost:8000/analytics/performance/?compare=month&user_id=1"
 
 Advanced Filtering Example
 curl -X GET "http://localhost:8000/analytics/blog-views/" \
@@ -233,7 +232,13 @@ N+1 queries: Completely prevented
 
 🔧 Management Commands
 # Load comprehensive sample data
+
+python manage.py makemigrations analytics_app
+
+python manage.py migrate
+
 python manage.py load_sample_data
+
 
 # Run performance tests with benchmarks
 python manage.py run_performance_tests
@@ -242,8 +247,11 @@ python manage.py run_performance_tests
 python manage.py makemigrations --check
 
 # Create and apply migrations
-python manage.py makemigrations
+
+python manage.py makemigrations analytics_app
+
 python manage.py migrate
+
 
 # Create superuser
 python manage.py createsuperuser
