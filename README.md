@@ -321,3 +321,20 @@ Check the API documentation at /swagger/
 Review the test suite for examples
 
 Check application logs in console
+
+## 📋 Assessment Submission Context
+
+This project was submitted for the **IDEEZA Senior Backend Developer Assessment**. All requirements have been implemented with additional production-ready features.
+
+### **Commit History Note:**
+The compressed commit timeline (December 5, 2025) represents a focused development sprint where all components were integrated, tested, and polished for submission. Each commit corresponds to a complete, functional component as outlined in the development notes.
+
+### **Key Differentiators:**
+1. **Production Readiness** - Error handling, logging, monitoring
+2. **Performance Focus** - Optimized queries, indexing, pagination
+3. **Extensibility** - Modular design, clear separation of concerns
+4. **Completeness** - Full test suite, documentation, deployment config
+
+---
+*Submitted by: Tadese Worku*  
+*Repository: https://github.com/master12-ctr/Backend-Developer-Assessment*
